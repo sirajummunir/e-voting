@@ -1,0 +1,80 @@
+.btn-big {
+    width: 100%;
+    font-size: 2em;
+    height:50px;
+    font-weight: bold; 
+	border: none;
+	background-color: #42A5F5;
+	color: white;
+	margin: 5px 10px 5px 10px;
+}
+
+.btn-big:hover {
+	color: #42A5F5;
+	border: 5px solid #42A5F5;
+	background-color: white;
+}
+
+.btn-blue {
+    background-color: #42a5f5;
+    color: #ffffff;
+}
+
+.btn-blue:hover {
+    color: #42a5f5;
+    background-color: #ffffff;
+    border: 5px solid #42a5f5;
+}
+
+.btn-teal {
+    width: 100%;
+    font-size: 2em;
+    height:50px;
+    font-weight: bold; 
+    border: none;
+    background-color: #4DB6AC;
+    color: white;
+    margin: 5px 10px 5px 10px;
+}
+
+.btn-teal:hover{
+    color: #4DB6AC;
+    background-color: #ffffff;
+    border: 5px solid #4DB6AC;
+}
+
+.profile-img img {
+    border-radius: 50%;
+    height: 200px;
+}
+
+.card-contents {
+    padding: 1em;
+    margin: 2em;
+}
+
+body {
+    font-family: 'Raleway', sans-serif;
+}
+
+nav {
+    font-weight: bolder;
+}
+
+.btn-xs{
+    border: none;
+    width: 30px;
+    height: 15px;
+    margin: 5px;
+    padding: 4px 12px 4px 12px;
+    color: white;
+    cursor: pointer;
+}
+
+.pagination li {
+    width: 2em;
+    height: 2em;
+    background-color: #42A5F5;
+    color: white;
+    font-weight: bold;
+}
