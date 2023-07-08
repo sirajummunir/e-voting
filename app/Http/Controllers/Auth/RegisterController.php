@@ -71,9 +71,9 @@ class RegisterController extends Controller
         $this->validator($request->all())->validate();
         // return $request->all();
         $data = $request->all();
-        $data['code'] = rand(100000, 999999);
-        \Log::info('Verification code for '.$data['email']. ' is '. $data['code']);
-        
+        // $data['code'] = rand(100000, 999999);
+        // \Log::info('Verification code for '.$data['email']. ' is '. $data['code']);
+
         $data['image'] = md5($data['email']).".jpg";
         if ($request->file('profile') != null) {
             $request->file('profile')->move(public_path('images'), $data['image']);
@@ -83,7 +83,8 @@ class RegisterController extends Controller
         unset($data['profile']);
 
         Cache::put(md5($data['email']), $data, 5);
-        return redirect(route('regCode'))->with('success', 'Please enter the email verification code below to activate account.');
+        // return redirect(route('regCode'))->with('success', 'Please enter the email verification code below to activate account.');
+        return $this->registerUser($data);
     }
 
     public function regCode()
@@ -125,7 +126,7 @@ class RegisterController extends Controller
 
         return Validator::make($data, [
             'name' => 'required|string|max:255',
-            'nid'  => 'required|string|unique:users|size:17',
+            'nid'  => 'required|string|unique:users|size:10',
             'birthday' => 'required',
             'father_name' => 'required|string|max:255',
             'mother_name' => 'required|string|max:255',
