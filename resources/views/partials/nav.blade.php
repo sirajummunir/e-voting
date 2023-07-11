@@ -6,8 +6,8 @@
 				@if(Route::currentRouteName() != 'home')
 					<li><a href="{{ route('home') }}">Home</a></li>
 				@endif
-				
-                     
+                @if (Auth::check())
+                @if (Auth::user()->email == "admin@admin.com")
 					<li>
 						<a class="dropdown-button" href="#" data-beloworigin="true" data-activates="admin">
 							Controls<i class="material-icons right"></i>
@@ -33,13 +33,15 @@
 							</form>
 						</div>
 					</div>
+                @endif
+                @endif
 				<!-- @endrole -->
 				<!-- @role('voter') -->
 					<!-- <li><a href="">Vote</a></li> -->
 				<!-- @endrole -->
 				<!-- @role('candidate') -->
 					<!-- <li><a href="">Room</a></li> -->
-			
+
 				<!-- @endrole -->
 				@if(Auth::check())
 					<li><a href="{{ route('logout') }}"><i class="material-icons left"></i> Logout</a></li>
